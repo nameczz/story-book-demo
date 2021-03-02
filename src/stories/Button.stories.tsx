@@ -2,37 +2,33 @@ import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Button, ButtonProps } from '../core/button/Button';
+import { CustomButton } from '../core/button/Button';
+import { ButtonProps } from '@material-ui/core';
 
 export default {
   title: 'Example/Button',
-  component: Button,
+  component: CustomButton,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <CustomButton {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Zilliz',
+export const Contained = Template.bind({});
+Contained.args = {
+  variant: 'contained',
+  children: 'Zilliz',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Zilliz',
+export const Outlined = Template.bind({});
+Outlined.args = {
+  variant: 'outlined',
+  children: 'Zilliz',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const Texted = Template.bind({});
+Texted.args = {
+  variant: 'text',
+  children: 'Zilliz',
 };
