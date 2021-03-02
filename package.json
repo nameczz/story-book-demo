@@ -22,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public -o ./docs"
+    "build-storybook": "build-storybook -s public -o ./docs",
+    "check-version": "semantic-release --dry--run"
   },
   "eslintConfig": {
     "extends": [
@@ -63,9 +64,12 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    "@semantic-release/github",
     "@semantic-release/npm",
-    "@semantic-release/git"
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "./my-build-script.sh ${nextRelease.version}"
+      }
+    ]
   ]
 }
