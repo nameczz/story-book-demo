@@ -22,7 +22,7 @@ Primary.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
+  label: 'Zilliz',
 };
 
 export const Large = Template.bind({});
