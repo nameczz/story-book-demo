@@ -5,5 +5,14 @@
     "keywords": [
         "zilliz",
         "ui"
-    ]
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index.js",
+    "release": {
+        "branches": [
+            "main"
+        ]
+    }
 }
