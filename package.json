@@ -57,7 +57,7 @@
   "main": "dist/index.js",
   "release": {
     "branches": [
-      "0.x.x",
+      "0.2.1",
       "main"
     ]
   },
