@@ -12,7 +12,7 @@
     "main": "dist/index.js",
     "release": {
         "branches": [
-            "0?(.{+([0-20]),x})(.{+([0-20]),x})",
+            "0.x.x",
             "main"
         ]
     }
