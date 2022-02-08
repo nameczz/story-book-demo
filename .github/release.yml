@@ -1,0 +1,29 @@
+name: Zui release action
+
+on:
+  release:
+    types: [released]
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build app
+        run: |
+          yarn build
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
