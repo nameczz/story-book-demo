@@ -1,29 +1,47 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { CustomButton } from "../core/Button/Button";
+import { VariantButtonGroup, CustomButton } from "../../core";
+
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+} from "@storybook/addon-docs";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/Button",
-  component: CustomButton,
+  title: "Basic/ButtonGroup",
+  component: VariantButtonGroup,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof CustomButton>;
+  subcomponents: { CustomButton },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <ArgsTable story={PRIMARY_STORY} />
+          <Stories />
+        </>
+      ),
+    },
+  },
+} as ComponentMeta<typeof VariantButtonGroup>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof CustomButton> = (args) => (
-  <CustomButton {...args} />
+const Template: ComponentStory<typeof VariantButtonGroup> = (args) => (
+  <VariantButtonGroup {...args} />
 );
-
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  children: "Button",
-};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
