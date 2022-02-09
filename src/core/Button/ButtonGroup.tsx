@@ -1,6 +1,6 @@
-import * as React from "react";
-import { CustomButton } from "./Button";
-import { ButtonGroup, ButtonGroupProps } from "@mui/material";
+import * as React from 'react';
+import { CustomButton } from './Button';
+import { ButtonGroup, ButtonGroupProps } from '@mui/material';
 
 export const VariantButtonGroup = (props: ButtonGroupProps) => {
   return (

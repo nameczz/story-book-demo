@@ -1,5 +1,5 @@
-import React from "react";
-import Button, { ButtonProps } from "@mui/material/Button";
+import React from 'react';
+import Button, { ButtonProps } from '@mui/material/Button';
 
 /**
 - Use an avatar for attributing actions or content to specific users.
