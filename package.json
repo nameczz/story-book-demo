@@ -5,7 +5,8 @@
     "build": "tsc --declaration",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest"
+    "test": "jest",
+    "loki": "loki"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
@@ -32,6 +33,18 @@
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",
     "jest": "^27.5.1",
+    "loki": "^0.28.1",
     "typescript": "^4.4.4"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      }
+    }
   }
 }
