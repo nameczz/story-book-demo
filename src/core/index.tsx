@@ -1,2 +1,2 @@
-export { CustomButton } from "./Button/Button";
-export { VariantButtonGroup } from "./Button/ButtonGroup";
+export { ZButton } from './Button/Button';
+export { ZButtonGroup } from './Button/ButtonGroup';

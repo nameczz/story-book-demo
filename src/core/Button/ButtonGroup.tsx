@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { CustomButton } from './Button';
+import { ZButton } from './Button';
 import { ButtonGroup, ButtonGroupProps } from '@mui/material';
 
-export const VariantButtonGroup = (props: ButtonGroupProps) => {
+export const ZButtonGroup = (props: ButtonGroupProps) => {
   return (
     <ButtonGroup {...props}>
-      <CustomButton>One</CustomButton>
-      <CustomButton>Two</CustomButton>
-      <CustomButton>Three</CustomButton>
+      <ZButton>One</ZButton>
+      <ZButton>Two</ZButton>
+      <ZButton>Three</ZButton>
     </ButtonGroup>
   );
 };

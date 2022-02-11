@@ -5,7 +5,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import { CustomButton } from '../core/Button/Button';
+import { ZButton } from '../core/Button/Button';
 
 let container: any = null;
 
@@ -35,7 +35,7 @@ describe('Test CustomButton', () => {
 
   test('test button props', () => {
     act(() => {
-      render(<CustomButton variant="contained">test</CustomButton>, container);
+      render(<ZButton variant="contained">test</ZButton>, container);
     });
 
     expect(container.querySelector('.button').textContent).toBe('test');

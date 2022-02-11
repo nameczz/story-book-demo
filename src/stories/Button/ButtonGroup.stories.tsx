@@ -1,19 +1,17 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { VariantButtonGroup, CustomButton } from '../../core';
+import { ZButtonGroup } from '../../core';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Basic/ButtonGroup',
-  component: VariantButtonGroup,
-
-  subcomponents: { CustomButton },
-} as ComponentMeta<typeof VariantButtonGroup>;
+  component: ZButtonGroup,
+} as ComponentMeta<typeof ZButtonGroup>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof VariantButtonGroup> = args => (
-  <VariantButtonGroup {...args} />
+const Template: ComponentStory<typeof ZButtonGroup> = args => (
+  <ZButtonGroup {...args} />
 );
 
 export const Secondary = Template.bind({});

@@ -15,7 +15,7 @@ The system focus on solving 3 main problems:
 
 1. Go to core folder
 2. Create component folder like Button
-3. Create component like Button.tsx
+3. Create component like Button.tsx, and component name need start with Z like ZButton.
 4. Export component in core/index.tsx (Easy for use as lib)
 
 ## Add Component Story

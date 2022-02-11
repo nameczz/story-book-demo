@@ -1,17 +1,17 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { CustomButton } from '../../core/Button/Button';
+import { ZButton } from '../../core/Button/Button';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 
 export default {
   title: 'Basic/Button',
-  component: CustomButton,
-} as ComponentMeta<typeof CustomButton>;
+  component: ZButton,
+} as ComponentMeta<typeof ZButton>;
 
-export const Primary: ComponentStory<typeof CustomButton> = args => {
+export const Primary: ComponentStory<typeof ZButton> = args => {
   return (
-    <CustomButton
+    <ZButton
       {...args}
       onClick={action('custom button click')}
       children="Primary Button"
@@ -22,7 +22,7 @@ export const Primary: ComponentStory<typeof CustomButton> = args => {
 
 export const Large = args => {
   return (
-    <CustomButton
+    <ZButton
       {...args}
       onClick={action('custom button click')}
       children="Primary Large Button"
