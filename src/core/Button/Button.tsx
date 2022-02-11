@@ -6,5 +6,9 @@ import Button, { ButtonProps } from '@mui/material/Button';
 - The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
 **/
 export const ZButton = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>;
+  return (
+    <Button {...props} sx={{ fontSize: 40 }}>
+      {props.children}
+    </Button>
+  );
 };
