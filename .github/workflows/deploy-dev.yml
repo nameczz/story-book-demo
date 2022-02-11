@@ -1,9 +1,9 @@
-name: Deploy Prod
+name: Deploy Dev
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build-and-deploy:
@@ -12,7 +12,7 @@ jobs:
       - name: 'Checkout Github Action'
         uses: actions/checkout@master
         with:
-          ref: 'main'
+          ref: 'dev'
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -31,7 +31,7 @@ jobs:
       - name: Build Docker Image
         id: build-image
         run: |
-          docker build "$GITHUB_WORKSPACE/" -f "Dockerfile" -t harbor-us1.zilliz.cc/ued/zui:${{ steps.generate-tag-name.outputs.docker_tag }}         
+          docker build "$GITHUB_WORKSPACE/" -f "Dockerfile" -t harbor-us1.zilliz.cc/ued/zui-dev:${{ steps.generate-tag-name.outputs.docker_tag }}         
       - uses: azure/docker-login@v1
         with:
           login-server: harbor-us1.zilliz.cc
@@ -41,7 +41,7 @@ jobs:
         if: "github.repository == 'zilliztech/zui'"
         id: publish-image
         run: |
-          docker push harbor-us1.zilliz.cc/ued/zui:${{ steps.generate-tag-name.outputs.docker_tag }}
+          docker push harbor-us1.zilliz.cc/ued/zui-dev:${{ steps.generate-tag-name.outputs.docker_tag }}
 
       - name: Install OpenVPN and kubectl
         run: |
@@ -68,4 +68,4 @@ jobs:
         run: |
           echo ${{ secrets.kubeconfig }} > config64
           base64 -d config64 > kubeconfig
-          kubectl set image deployment/zui zui=harbor-us1.zilliz.cc/ued/zui:${{ steps.generate-tag-name.outputs.docker_tag }} -n ued --kubeconfig=kubeconfig
+          kubectl set image deployment/zui-dev zui-dev=harbor-us1.zilliz.cc/ued/zui-dev:${{ steps.generate-tag-name.outputs.docker_tag }} -n ued --kubeconfig=kubeconfig
