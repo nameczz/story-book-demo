@@ -1,6 +1,10 @@
 {
-  "name": "zilliz-ui",
+  "name": "test-ui",
   "version": "0.0.2",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc --declaration",
     "storybook": "start-storybook -p 6006",
